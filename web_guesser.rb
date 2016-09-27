@@ -39,13 +39,16 @@ def win_or_lose(guess_message, remaining_guesses)
 end
 
 def win
-  @@secret_number = rand(100)
-  @@remaining_guesses = 5
+  reset
   "You win!"
 end
 
 def lose
-  @@secret_number = rand (100)
-  @@remaining_guesses = 5
+  reset
   "You lose!"
+end
+
+def reset
+  @@secret_number = rand(100)
+  @@remaining_guesses = 5
 end
