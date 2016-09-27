@@ -7,11 +7,15 @@
       <input type='submit' value='Guess!' />
     </form>
 
-    <p> <%= message %> </p>
+    <p> <%= guess_message if params['guess'] %> </p>
 
-    <% if params['guess'].to_i == number %>
+    <p> <%= remaining_guesses %> <%= win_or_lose_message %> </p>
+
+    <% if cheat || win_or_lose_message == "You win!" %>
       <p> <%= "The secret number is #{number}." %> </p>
     <% end %>
+
+    
     
   </body>
 </html>
